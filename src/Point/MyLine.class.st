@@ -27,7 +27,7 @@ MyLine >> begin:aPoint [
 begin:=aPoint.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #calcu }
 MyLine >> calculateLenght [
  |lenght|
 lenght:= (((begin x)-(end x))**2 + ((begin y) - (end y))**2)**(1/2).
@@ -46,7 +46,7 @@ MyLine >> end:aPoint [
 end:=aPoint.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #calculating }
 MyLine >> gradient [ 
 ^((end y) - (begin y))/((end x)-(begin x))
 
