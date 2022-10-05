@@ -6,7 +6,7 @@ Class {
 
 { #category : #tests }
 TestMyLine >> testGradient [
-|line line2 pointE pointB pointE2 pointB2|
+|line line2 line3 pointE pointB pointE2 pointB2|
 pointE:=Point2D x:1 y:1.
 pointB:=Point2D x:12 y:1.
 line:=MyLine begin:pointB end:pointE.
@@ -15,6 +15,9 @@ pointE2:=Point2D x:1 y:1.
 pointB2:=Point2D x:1 y:2.
 line2:=MyLine begin:pointB2 end:pointE2.
 self assert: line gradient equals:0.
+
+line3:=MyLine begin:pointE end:pointB.
+self assert: line3 gradient equals: line gradient.
 
 
 ]
