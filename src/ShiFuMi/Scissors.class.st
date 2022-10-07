@@ -4,22 +4,22 @@ Class {
 	#category : #ShiFuMi
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #calculating }
 Scissors >> playAgainstPaper [
 ^#lose.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #calculating }
 Scissors >> playAgainstRock [
 ^#win.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #calculating }
 Scissors >> playAgainstScissors [
     ^#draw.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #game }
 Scissors >> vs:opponent [
  ^opponent playAgainstScissors.
 ]
