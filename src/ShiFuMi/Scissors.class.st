@@ -5,6 +5,11 @@ Class {
 }
 
 { #category : #calculating }
+Scissors >> playAgainstLizard [
+    ^#lose.
+]
+
+{ #category : #calculating }
 Scissors >> playAgainstPaper [
 ^#lose.
 ]
@@ -17,6 +22,11 @@ Scissors >> playAgainstRock [
 { #category : #calculating }
 Scissors >> playAgainstScissors [
     ^#draw.
+]
+
+{ #category : #calculating }
+Scissors >> playAgainstSpock [
+    ^#win.
 ]
 
 { #category : #game }
