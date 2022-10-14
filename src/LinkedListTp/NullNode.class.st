@@ -2,7 +2,6 @@ Class {
 	#name : #NullNode,
 	#superclass : #Object,
 	#instVars : [
-		'value',
 		'nextNode',
 		'previousNode'
 	],
@@ -16,14 +15,20 @@ NullNode >> isNullNode [
 
 { #category : #testing }
 NullNode >> nextNode [
-|nullNode|
-nullNode:=NullNode new.
-^nullNode.
+^nextNode.
+]
+
+{ #category : #testing }
+NullNode >> nextNode:aNode [
+nextNode:=aNode
 ]
 
 { #category : #testing }
 NullNode >> previousNode [
-|nullNode|
-nullNode:=NullNode new.
-^nullNode.
+^previousNode.
+]
+
+{ #category : #testing }
+NullNode >> previousNode:aNode [
+previousNode:=aNode
 ]

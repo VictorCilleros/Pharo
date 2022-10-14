@@ -3,7 +3,8 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'begin',
-		'end'
+		'end',
+		'size'
 	],
 	#category : #LinkedListTp
 }
@@ -13,10 +14,18 @@ List >> add: aValue [
   |aNode|
   aNode:= Node new.
   aNode value:aValue.
-  end isNullNode ifTrue: [ self end: aNode ] ifFalse:
-  [aNode previousNode: self end.
-	self end nextNode: aNode.
-	self end:aNode.] 
+
+  begin isNullNode ifTrue: 
+"Case where the list is empty"
+[ self begin: aNode.] 
+ifFalse:
+"Case where the list already contains element, we add the node at the end"
+[end previousNode nextNode: aNode.  "The Former last node has now a nextNode that is not NullNode"
+ aNode previousNode: end previousNode.].
+
+aNode nextNode: end.    " We always put the liaison between end and added node"
+end previousNode: aNode.
+self size: self size + 1. 
   
 
 
@@ -28,17 +37,18 @@ List >> add: aValue [
 List >> at: aNumber [
 |node|
  node:=begin.
- 1 to: aNumber do:[: each|node := node nextNode].
+ 1 to: aNumber-1 do:[: each|node := node nextNode].
   ^node value.
 
 ]
 
 { #category : #checking }
 List >> at: aNumber put: aValue [
-|node i |
+|node|
  node:=begin.
- 1 to: aNumber do:[i| node nextNode].
+ 1 to: aNumber-1 do:[: each|node := node nextNode].
   node value: aValue.
+  
 	 
 ]
 
@@ -80,22 +90,45 @@ nodeEnd:=NullNode new.
 
 self begin: nodeBegin.
 self end:nodeEnd.
+self size:0.
 ^self.
 ]
 
 { #category : #checking }
 List >> isEmpty [
-    ^end isNullNode  
+    ^begin isNullNode  
 	 "|result|  begin ifNil: [ result:=true ] ifNotNil:[result:=false]. ^result"
 	
 ]
 
 { #category : #checking }
 List >> removeAt: aNumber [ 
-|node i |
- node:=begin.
- 1 to: aNumber do:[i| node nextNode].
-  (node previousNode) nextNode: (node nextNode).
- 
+|node|
+"Case : deleting the begin"
+(aNumber == 1 ) ifTrue: [ begin:= begin nextNode.
+	                            begin previousNode: NullNode new.]
+ifFalse:
+"Case : deleted one is not begin"
+ [node:=begin.
+  1 to: aNumber-1 do:[: each|node := node nextNode].
+  "Now node is the one we want to delete : re-link the previous and next one, parentesis are just for read but useless"
+  (node previousNode) nextNode:     (node nextNode).
+  (node nextNode )    previousNode: (node previousNode).].
+self size: self size - 1.
+
+	 
+]
+
+{ #category : #checking }
+List >> size [ 
+^size
+
+	 
+]
+
+{ #category : #checking }
+List >> size: aNumber [
+size:=aNumber
+
 	 
 ]
