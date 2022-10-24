@@ -1,0 +1,4 @@
+accessing
+operatorString
+^ self subclassResponsibility
+

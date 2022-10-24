@@ -1,3 +1,6 @@
 tests
 testCreationWithClassCreationMessage
-self assert: (EConstant value: 5) evaluate equals: 5
+
+	self
+		assert: ((EConstant value: 5) evaluateWith: Dictionary new)
+		equals: 5
