@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "TestCase",
-	"category" : "Expressions",
+	"category" : "Expressions-expressions",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

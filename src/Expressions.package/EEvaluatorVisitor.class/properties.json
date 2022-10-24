@@ -1,11 +1,13 @@
 {
 	"commentStamp" : "",
 	"super" : "Object",
-	"category" : "Expressions-expressions",
+	"category" : "Expressions-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
-	"name" : "EExpression",
+	"instvars" : [
+		"bindings"
+	],
+	"name" : "EEvaluatorVisitor",
 	"type" : "normal"
 }

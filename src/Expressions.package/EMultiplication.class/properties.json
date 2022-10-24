@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "EBinaryExpression",
-	"category" : "Expressions",
+	"category" : "Expressions-expressions",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

@@ -1,11 +1,14 @@
 {
 	"commentStamp" : "",
-	"super" : "TestCase",
+	"super" : "EBinaryExpression",
 	"category" : "Expressions-expressions",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
-	"name" : "EVariableTest",
+	"instvars" : [
+		"numerator",
+		"denominator"
+	],
+	"name" : "EDivision",
 	"type" : "normal"
 }

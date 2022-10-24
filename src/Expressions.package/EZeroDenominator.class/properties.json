@@ -1,11 +1,11 @@
 {
 	"commentStamp" : "",
-	"super" : "TestCase",
-	"category" : "Expressions-expressions",
+	"super" : "Error",
+	"category" : "Expressions-errors",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "EVariableTest",
+	"name" : "EZeroDenominator",
 	"type" : "normal"
 }
