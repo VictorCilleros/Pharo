@@ -1,4 +1,5 @@
 visiting
 visitVariable: aVariable
-^(aVariable evaluateWith: bindings) toString.
+^(aVariable evaluateWith: bindings) printString. 
+
 
